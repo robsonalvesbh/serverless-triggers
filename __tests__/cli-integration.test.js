@@ -1,6 +1,7 @@
 const { system, filesystem } = require('gluegun')
 
 const src = filesystem.path(__dirname, '..')
+const { version: packageVersion } = require('./../package.json')
 
 const cli = async cmd =>
   system.run(
@@ -9,23 +10,10 @@ const cli = async cmd =>
 
 test('outputs version', async () => {
   const output = await cli('--version')
-  expect(output).toContain('0.0.1')
+  expect(output).toContain(packageVersion)
 })
 
 test('outputs help', async () => {
   const output = await cli('--help')
-  expect(output).toContain('0.0.1')
-})
-
-test('generates file', async () => {
-  const output = await cli('generate foo')
-
-  expect(output).toContain('Generated file at models/foo-model.js')
-  const foomodel = filesystem.read('models/foo-model.js')
-
-  expect(foomodel).toContain(`module.exports = {`)
-  expect(foomodel).toContain(`name: 'foo'`)
-
-  // cleanup artifact
-  filesystem.remove('models')
+  expect(output).toContain(packageVersion)
 })
