@@ -1,0 +1,22 @@
+{
+	"Records": [
+		<% props.payloads.map((payload, index) => { %>
+		{
+			"messageId": "serverless-trigger-<%= new Date().getTime() %>",
+			"receiptHandle": "serverlessTriggerHandle",
+			"body": "<%- JSON.stringify(payload).replace(/\\"/g, '\\\\\\"').replace(/([^\\])\"/g, '$1\\"') %>",
+			"attributes": {
+				"ApproximateReceiveCount": "1",
+				"SentTimestamp": "<%= new Date().getTime() %>",
+				"SenderId": "<%= Math.random() %>",
+				"ApproximateFirstReceiveTimestamp": "<%= new Date().getTime() %>"
+			},
+			"messageAttributes": {},
+			"md5OfBody": "7b270e59b47ff90a553787216d55d91d",
+			"eventSource": "aws:sqs",
+			"eventSourceARN": "arn:aws:sqs:us-east-1:375164415270:serverlessTriggerQueue",
+			"awsRegion": "us-east-1"
+		}<%= props.payloads.length - 1 === index ? '' : ',' %>
+		<% }); %>
+	]
+}
