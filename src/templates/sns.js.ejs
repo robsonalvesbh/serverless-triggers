@@ -1,0 +1,29 @@
+{
+	"Records": [
+		<% props.payloads.map((payload, index) => { %>
+		{
+			"EventSource": "aws:sns",
+			"EventVersion": "1.0",
+			"EventSubscriptionArn": "arn:aws:sns:us-east-1:{{{accountId}}}:serverlessTriggerTopic",
+			"Sns": {
+				"Type": "Notification",
+				"messageId": "serverless-trigger-<%= new Date().getTime() %>",
+				"TopicArn": "arn:aws:sns:us-east-1:123456789012:serverlessTriggerTopic",
+				"Subject": "<%= props.subject %>",
+				"Message": "<%- JSON.stringify(payload).replace(/\\"/g, '\\\\\\"').replace(/([^\\])\"/g, '$1\\"') %>",
+				"Timestamp": "<%= new Date().getTime() %>",
+				"SignatureVersion": "1",
+				"Signature": "serverlessTriggerSignature",
+				"SigningCertUrl": "https://sns.us-east-1.amazonaws.com/ServerlessTriggerService-f3ecfb7224c7233fe7bb5f59f96de52f.pem",
+				"UnsubscribeUrl": "https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-east-1:123456789012:serverlessTriggerTopic:c9135db0-26c4-47ec-8998-413945fb5a96",
+				"MessageAttributes": {
+					"AWS.SNS.SMS.SenderID": {
+						"DataType": "String",
+						"StringValue": "serverlessTrigger"
+					}
+				}
+			}
+		}<%= props.payloads.length - 1 === index ? '' : ',' %>
+		<% }); %>
+	]
+}
