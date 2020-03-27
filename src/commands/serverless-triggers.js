@@ -4,7 +4,12 @@ const command = {
   run: async toolbox => {
     const { print } = toolbox
 
-    print.info('Welcome to your CLI')
+    const message = `
+      Version: ${toolbox.meta.version()}
+      Usage: serverless-triggers <command>
+    `
+    
+    print.info(message)
   }
 }
 
