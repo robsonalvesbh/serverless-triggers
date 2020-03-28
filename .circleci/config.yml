@@ -9,7 +9,9 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run: yarn
+            - run: 
+                name: Install packages
+                command: yarn
   
   test:
     executor:
@@ -18,7 +20,9 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run: yarn test
+            - run: 
+                name: Tests Validate
+                command: yarn test
 
   lint:
     executor:
@@ -27,7 +31,9 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run: yarn lint
+            - run: 
+                name: Lint Validate
+                command: yarn lint
   
   publish:
     executor:
@@ -36,7 +42,12 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run: npm publish
+            - run:
+                name: Authenticate to npm
+                command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
+            - run: 
+                name: Publish package
+                command: npm publish
 
 workflows:
     validation:
