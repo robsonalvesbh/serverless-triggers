@@ -4,7 +4,8 @@ const cli = require('./config')
 
 const templates = [
   'sqs',
-  'sns'
+  'sns',
+  'sns-to-sqs'
 ]
 
 test('Validate generate command', async () => {

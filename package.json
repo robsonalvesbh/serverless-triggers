@@ -1,6 +1,6 @@
 {
   "name": "serverless-triggers",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "serverless-triggers CLI",
   "author": {
     "name": "Robson Alves",
@@ -19,7 +19,8 @@
     "test": "jest",
     "watch": "jest --watch",
     "snapupdate": "jest --updateSnapshot",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "changelog": "auto-changelog"
   },
   "files": [
     "src",
@@ -33,9 +34,10 @@
     "gluegun": "latest"
   },
   "devDependencies": {
-    "standard": "^12.0.1",
+    "auto-changelog": "^1.16.3",
+    "jest": "^24.1.0",
     "prettier": "^1.12.1",
-    "jest": "^24.1.0"
+    "standard": "^12.0.1"
   },
   "jest": {
     "testEnvironment": "node"
