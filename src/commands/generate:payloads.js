@@ -9,7 +9,7 @@ module.exports = {
       print: { success }
     } = toolbox
 
-    const { separator, listAsync, read }  = filesystem
+    const { separator, listAsync, read } = filesystem
     const payloadsPath = `${process.cwd()}${separator}tests${separator}payloads`
     const triggersPath = `${process.cwd()}${separator}tests${separator}triggers`
 

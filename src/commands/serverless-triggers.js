@@ -8,7 +8,7 @@ const command = {
       Version: ${toolbox.meta.version()}
       Usage: serverless-triggers <command>
     `
-    
+
     print.info(message)
   }
 }
