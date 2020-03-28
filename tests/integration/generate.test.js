@@ -7,8 +7,8 @@ const templates = [
   'sns'
 ]
 
-test('Validate generate:payloads command', async () => {
-  const output = await cli('generate:payloads')
+test('Validate generate command', async () => {
+  const output = await cli('generate')
 
   templates.map(template => {
     expect(output).toContain(`Generated ${template.toUpperCase()} payload at tests/triggers/${template}.json`)

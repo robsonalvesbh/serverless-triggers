@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'generate:payloads',
+  name: 'generate',
   description: 'Generate trigger payload files',
   alias: ['g'],
   run: async toolbox => {
