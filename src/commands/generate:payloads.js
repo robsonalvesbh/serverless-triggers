@@ -6,26 +6,40 @@ module.exports = {
     const {
       template: { generate },
       filesystem,
-      print: { success }
+      print: { info, success, error, warning },
+      getPayloadsFolder,
+      getTriggersFolder
     } = toolbox
 
+    info('Generating files...')
+
     const { separator, listAsync, read } = filesystem
-    const payloadsPath = `${process.cwd()}${separator}tests${separator}payloads`
-    const triggersPath = `${process.cwd()}${separator}tests${separator}triggers`
 
-    const files = await listAsync(payloadsPath)
+    try {
+      const payloadsFolder = getPayloadsFolder()
+      const triggersFolder = getTriggersFolder()
 
-    files.map(async (file) => {
-      const filePath = `${payloadsPath}${separator}${file}`
-      const payload = read(filePath, 'json')
+      const files = await listAsync(payloadsFolder)
 
-      await generate({
-        template: `${payload.template.toLowerCase()}.js.ejs`,
-        target: `${triggersPath}${separator}${file}`,
-        props: { payloads: payload.payloads }
+      if (files.length === 0) {
+        warning('Payload folder is empty!')
+        return
+      }
+
+      files.map(async (file) => {
+        const filePath = `${payloadsFolder}${separator}${file}`
+        const payload = read(filePath, 'json')
+
+        await generate({
+          template: `${payload.template.toLowerCase()}.js.ejs`,
+          target: `${triggersFolder}${separator}${file}`,
+          props: { payloads: payload.payloads }
+        })
+
+        success(`Generated ${payload.template.toUpperCase()} payload at tests/triggers/${file}`)
       })
-
-      success(`Generated ${payload.template.toUpperCase()} payload at tests/triggers/${file}`)
-    })
+    } catch (e) {
+      error(`Unexpected error occurred on generated payload files`)
+    }
   }
 }
