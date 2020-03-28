@@ -38,16 +38,19 @@ jobs:
   publish:
     executor:
       name: node/default
+    working_directory: ~/repo
     steps:
       - checkout
       - node/with-cache:
           steps:
+            - attach_workspace:
+                at: ~/repo
             - run:
-                name: Authenticate to npm
+                name: Authenticate with NPM
                 command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
-            - run: 
+            - run:
                 name: Publish package
-                command: npm publish
+                command: npm publish --access public
 
 workflows:
     validation:
