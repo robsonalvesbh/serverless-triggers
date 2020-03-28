@@ -7,7 +7,6 @@
     "email": "robsonalves.dev@gmail.com",
     "url": "https://robsonalves.dev"
   },
-  "private": true,
   "bin": {
     "serverless-triggers": "bin/serverless-triggers",
     "sls-triggers": "bin/serverless-triggers",
