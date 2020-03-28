@@ -1,0 +1,39 @@
+{
+	"Records": [
+		<% props.payloads.map((payload, index) => { %>
+		{
+			"messageId": "serverless-trigger-<%= new Date().getTime() %>",
+			"receiptHandle": "serverlessTriggerHandle",
+			"body": "{
+				\"Type\": \"Notification\",
+				\"messageId\": \"serverless-trigger-<%= new Date().getTime() %>\",
+				\"TopicArn\": \"arn:aws:sns:us-east-1:123456789012:serverlessTriggerTopic\",
+				\"Subject\": \"<%= props.subject %>\",
+				\"Message\": \"<%- JSON.stringify(payload).replace(/([^\\])\"/g, '$1\\"').replace(/\\"/g, '\\\\\\"') %>\",
+				\"Timestamp\": \"<%= new Date().getTime() %>\",
+				\"SignatureVersion\": \"1\",
+				\"Signature\": \"serverlessTriggerSignature\",
+				\"SigningCertUrl\": \"https://sns.us-east-1.amazonaws.com/ServerlessTriggerService-f3ecfb7224c7233fe7bb5f59f96de52f.pem\",
+				\"UnsubscribeUrl\": \"https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-east-1:123456789012:serverlessTriggerTopic:c9135db0-26c4-47ec-8998-413945fb5a96\",
+				\"MessageAttributes\": {
+					\"AWS.SNS.SMS.SenderID\": {
+						\"DataType\": \"String\",
+						\"StringValue\": \"serverlessTrigger\"
+					}
+				}
+			}",
+			"attributes": {
+				"ApproximateReceiveCount": "1",
+				"SentTimestamp": "<%= new Date().getTime() %>",
+				"SenderId": "<%= Math.random() %>",
+				"ApproximateFirstReceiveTimestamp": "<%= new Date().getTime() %>"
+			},
+			"messageAttributes": {},
+			"md5OfBody": "7b270e59b47ff90a553787216d55d91d",
+			"eventSource": "aws:sqs",
+			"eventSourceARN": "arn:aws:sqs:us-east-1:375164415270:serverlessTriggerQueue",
+			"awsRegion": "us-east-1"
+		}<%= props.payloads.length - 1 === index ? '' : ',' %>
+		<% }); %>
+	]
+}
