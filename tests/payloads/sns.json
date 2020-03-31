@@ -2,12 +2,7 @@
   "template": "sns",
   "payloads": [
     {
-      "name": "Robson Alves",
-      "company": "serverless-trigger"
-    },
-    {
-      "name": "Robson Alves",
-      "company": "serverless-trigger"
+      "name": "Serverless Triggers"
     }
   ]
 }
