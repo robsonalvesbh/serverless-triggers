@@ -1,6 +1,6 @@
 {
   "name": "serverless-triggers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "serverless-triggers CLI",
   "author": {
     "name": "Robson Alves",
