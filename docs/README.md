@@ -49,17 +49,9 @@ This command will create the `tests/payloads` folder and create an example paylo
 
 ## How to use
 
-Read the [Usage Guide](https://robsonalvesbh.github.io/serverless-triggers/#/usage-guide#usage-guide) on our website for detailed instructions on how to use Serverless Triggers CLI.
+Read the [Usage Guide](usage-guide.md#usage-guide) on our website for detailed instructions on how to use Serverless Triggers CLI.
 
 ## Templates availabes
 
-Check the templates available on the [Templates Page](https://robsonalvesbh.github.io/serverless-triggers/#/templates#templates)
-
-## Documentation
-
-[Website](https://robsonalvesbh.github.io/serverless-triggers)
-
-# License
-
-MIT - see LICENSE
+Check the templates available on the [Templates Page](templates.md)
 

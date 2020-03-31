@@ -53,14 +53,14 @@ jobs:
                 command: npm publish --access public
 
 workflows:
-    validation:
-      jobs:
-        - install
-        - test
-        - lint
-    publish:
-      jobs:
-        - publish:
-            filters:
-              branches:
-                only: master
+  validation:
+    jobs:
+      - install
+      - test
+      - lint
+  publish:
+    jobs:
+      - publish:
+          filters:
+            branches:
+              only: master
