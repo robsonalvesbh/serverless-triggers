@@ -50,7 +50,7 @@ jobs:
                 command: echo "//registry.npmjs.org/:_authToken=$npm_TOKEN" > ~/repo/.npmrc
             - run:
                 name: Publish package
-                command: npm publish --access public
+                command: npm publish --access public --otp $npm_OPT
 
 workflows:
   validation:
