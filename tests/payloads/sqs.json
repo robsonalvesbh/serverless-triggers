@@ -1,9 +1,8 @@
 {
   "template": "sqs",
   "payloads": [
-   {
-     "name": "Robson Alves",
-     "company": "serverless-trigger"
-   }
+    {
+      "name": "Serverless Triggers"
+    }
   ]
 }
