@@ -1,4 +1,4 @@
 * [Home](/)
-* [Usage Guide](usage-guide.md)
-* [Templates](templates.md)
-* [Problems we solved](problems-we-solved.md)
+* [Usage Guide](usage-guide.md#usage-guide)
+* [Templates](templates.md#templates)
+* [Problems we solved](problems-we-solved.md#problem-that-we-solved)
