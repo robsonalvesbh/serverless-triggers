@@ -12,7 +12,9 @@
     "sls-triggers": "bin/serverless-triggers",
     "slst": "bin/serverless-triggers"
   },
+  "main": "src/cli.js",
   "scripts": {
+    "start:doc": "docsify serve ./docs",
     "format": "prettier --write **/*.{js,json} && standard --fix",
     "lint": "standard",
     "test": "jest",
@@ -48,5 +50,19 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
-  }
+  },
+  "keywords": [
+    "serverless",
+    "serverless framework",
+    "serverless applications",
+    "api gateway",
+    "lambda",
+    "aws",
+    "aws lambda",
+    "amazon",
+    "SQS",
+    "SNS",
+    "S3",
+    "amazon web services"
+  ]
 }
