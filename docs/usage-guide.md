@@ -32,6 +32,25 @@ serverless invoke local -f myFunction --path tests/triggers/myFunction.json
 
 ## Comands
 
+### Init
+
+```bash
+serverless-triggers init
+```
+
+This command will create the `tests/payloads` folder and create an example payload file:
+
+```json
+{
+  "template": "sqs",
+  "payloads": [
+    {
+      "name": "Serverless Triggers"
+    }
+  ]
+}
+```
+
 ### Generate
 
 ```bash
