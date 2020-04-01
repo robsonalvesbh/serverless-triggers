@@ -19,7 +19,8 @@ module.exports = {
 
       await generate({
         template: `payload.js.ejs`,
-        target: `${payloadsFolder}${separator}example.json`
+        target: `${payloadsFolder}${separator}example.json`,
+        props: { template: 'sqs' }
       })
 
       success(`Generated tests/payloads folder`)
