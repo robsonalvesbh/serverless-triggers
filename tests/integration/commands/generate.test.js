@@ -1,6 +1,6 @@
 const { filesystem } = require('gluegun')
 
-const cli = require('./config')
+const cli = require('./../config')
 
 const templates = [
   'sqs',
@@ -21,6 +21,8 @@ test('Validate generate command', async () => {
   const files = await listAsync(triggersPath)
 
   const fileNames = files.map(file => file.split('.').shift())
+  
+  templates.push('example')
 
   expect(fileNames.sort()).toEqual(templates.sort())
 })
