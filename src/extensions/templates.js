@@ -1,5 +1,6 @@
 module.exports = toolbox => {
   const templatesAvailable = [
+    'dynamo-stream',
     'sqs',
     'sns',
     'sns-to-sqs'
