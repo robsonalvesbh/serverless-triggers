@@ -3,6 +3,7 @@ const { filesystem } = require('gluegun')
 const cli = require('./../config')
 
 const templates = [
+  'dynamo-stream',
   'sqs',
   'sns',
   'sns-to-sqs'
