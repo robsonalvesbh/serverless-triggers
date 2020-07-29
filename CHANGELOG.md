@@ -1,3 +1,30 @@
+## <small>1.1.1 (2020-07-29)</small>
+
+* Add .circleci/config.yml ([e596399](https://github.com/robsonalvesbh/serverless-triggers/commit/e596399))
+* Add .circleci/config.yml ([3604cc9](https://github.com/robsonalvesbh/serverless-triggers/commit/3604cc9))
+* add circleci badge on readme ([535286b](https://github.com/robsonalvesbh/serverless-triggers/commit/535286b))
+* add integration test for generate:payloads command ([160e59d](https://github.com/robsonalvesbh/serverless-triggers/commit/160e59d))
+* add lint on circle-ci pipeline ([a2946f8](https://github.com/robsonalvesbh/serverless-triggers/commit/a2946f8))
+* add payload sqs and sns examples ([8797676](https://github.com/robsonalvesbh/serverless-triggers/commit/8797676))
+* Change default command ([d94b1de](https://github.com/robsonalvesbh/serverless-triggers/commit/d94b1de))
+* change npm to yarn on cicle-ci config ([8fc9d6a](https://github.com/robsonalvesbh/serverless-triggers/commit/8fc9d6a))
+* config initial tests ([f94006b](https://github.com/robsonalvesbh/serverless-triggers/commit/f94006b))
+* extract folder methods from generate:payloads command ([d4b66e8](https://github.com/robsonalvesbh/serverless-triggers/commit/d4b66e8))
+* fix initial tests ([9c4ef92](https://github.com/robsonalvesbh/serverless-triggers/commit/9c4ef92))
+* lint fix ([e9a0df8](https://github.com/robsonalvesbh/serverless-triggers/commit/e9a0df8))
+* Realease/1.0.0 (#7) ([282dc50](https://github.com/robsonalvesbh/serverless-triggers/commit/282dc50)), closes [#7](https://github.com/robsonalvesbh/serverless-triggers/issues/7) [#2](https://github.com/robsonalvesbh/serverless-triggers/issues/2)
+* Realease/1.1.0 (#10) ([86d5225](https://github.com/robsonalvesbh/serverless-triggers/commit/86d5225)), closes [#10](https://github.com/robsonalvesbh/serverless-triggers/issues/10) [#2](https://github.com/robsonalvesbh/serverless-triggers/issues/2)
+* Release/0.1.0 (#3) ([edd4b23](https://github.com/robsonalvesbh/serverless-triggers/commit/edd4b23)), closes [#3](https://github.com/robsonalvesbh/serverless-triggers/issues/3) [#2](https://github.com/robsonalvesbh/serverless-triggers/issues/2)
+* Release/0.1.1 (#4) ([14e545b](https://github.com/robsonalvesbh/serverless-triggers/commit/14e545b)), closes [#4](https://github.com/robsonalvesbh/serverless-triggers/issues/4)
+* Release/0.1.2 (#5) ([84e23c2](https://github.com/robsonalvesbh/serverless-triggers/commit/84e23c2)), closes [#5](https://github.com/robsonalvesbh/serverless-triggers/issues/5)
+* Release/0.1.3 (#6) ([ab542f3](https://github.com/robsonalvesbh/serverless-triggers/commit/ab542f3)), closes [#6](https://github.com/robsonalvesbh/serverless-triggers/issues/6)
+* Release/1.0.1 (#8) ([21196e0](https://github.com/robsonalvesbh/serverless-triggers/commit/21196e0)), closes [#8](https://github.com/robsonalvesbh/serverless-triggers/issues/8)
+* Release/1.0.2 (#9) ([c4aa6e7](https://github.com/robsonalvesbh/serverless-triggers/commit/c4aa6e7)), closes [#9](https://github.com/robsonalvesbh/serverless-triggers/issues/9)
+* Rename generate:payloads command to generate ([a303608](https://github.com/robsonalvesbh/serverless-triggers/commit/a303608))
+* Upgrade packages (#11) ([ca141d2](https://github.com/robsonalvesbh/serverless-triggers/commit/ca141d2)), closes [#11](https://github.com/robsonalvesbh/serverless-triggers/issues/11)
+
+
+
 ### Changelog
 
 All notable changes to this project will be documented in this file. Dates are displayed in UTC.

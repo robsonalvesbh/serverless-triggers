@@ -25,7 +25,7 @@ test('Validate generate command', async () => {
 
   const fileNames = files.filter(file => {
     const result = templates.some(template => `${template}.json` === file)
-    
+
     if (result) return true
 
     expect(output).toContain(ERROR_MESSAGE)
