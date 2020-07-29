@@ -1,5 +1,4 @@
 module.exports = toolbox => {
-  
   const templatesAvailable = [
     'sqs',
     'sns',
@@ -11,5 +10,4 @@ module.exports = toolbox => {
 
     return templatesAvailable.some(templateName => templateName === template.toLowerCase())
   }
-    
 }

@@ -1,6 +1,6 @@
 {
   "name": "serverless-triggers",
-  "version": "1.1.1",
+  "version": "1.0.4",
   "description": "serverless-triggers CLI",
   "author": {
     "name": "Robson Alves",
@@ -17,6 +17,7 @@
     "start:doc": "docsify serve ./docs",
     "format": "prettier --write **/*.{js,json} && standard --fix",
     "lint": "standard",
+    "lint:fix": "standard --fix",
     "test": "jest",
     "watch": "jest --watch",
     "snapupdate": "jest --updateSnapshot",
@@ -32,7 +33,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "gluegun": "^4.3.1"
+    "gluegun": "latest"
   },
   "devDependencies": {
     "jest": "^24.1.0",
