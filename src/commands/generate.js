@@ -8,7 +8,8 @@ module.exports = {
       filesystem,
       print: { info, success, error, warning },
       getPayloadsFolder,
-      getTriggersFolder
+      getTriggersFolder,
+      isTemplateValid
     } = toolbox
 
     info('Generating files...')
@@ -30,8 +31,15 @@ module.exports = {
         const filePath = `${payloadsFolder}${separator}${file}`
         const payload = read(filePath, 'json')
 
+        const template = payload.template.toLowerCase()
+
+        if (!isTemplateValid(template)) {
+          error(`You must pass a valid template in ${file}`)
+          return
+        }
+
         await generate({
-          template: `${payload.template.toLowerCase()}.js.ejs`,
+          template: `${template}.js.ejs`,
           target: `${triggersFolder}${separator}${file}`,
           props: { payloads: payload.payloads }
         })

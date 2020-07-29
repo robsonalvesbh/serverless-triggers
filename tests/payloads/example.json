@@ -1,5 +1,5 @@
 {
-  "template": "<%= props.template %>",
+  "template": "sqs",
   "payloads": [
     {
       "name": "Serverless Triggers"

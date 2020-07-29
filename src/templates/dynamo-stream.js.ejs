@@ -1,0 +1,22 @@
+{
+  "Records": [
+    <% props.payloads.map((payload, index) => { %>
+    {
+      "eventID": "serverless-trigger-<%= new Date().getTime() %>",
+      "eventName": "INSERT",
+      "eventVersion": "1.1",
+      "eventSource": "aws:dynamodb",
+      "awsRegion": "us-east-1",
+      "dynamodb": {
+        "ApproximateCreationDateTime": <%= new Date().getTime() %>,
+        "Keys": <%- JSON.stringify(payload.keys) %>,
+        "NewImage": <%- JSON.stringify(payload.fields) %>,
+        "SequenceNumber": "719500000000020828979683",
+        "SizeBytes": 180,
+        "StreamViewType": "NEW_AND_OLD_IMAGES"
+      },
+      "eventSourceARN": "arn:aws:dynamodb:us-east-1:375164415270:table/nuDevices/stream/2020-05-15T20:39:06.921"
+    }<%= props.payloads.length - 1 === index ? '' : ',' %>
+		<% }); %>
+  ]
+}
